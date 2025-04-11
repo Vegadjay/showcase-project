@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  html {
+    font-size: 17px; /* Increasing the base font size */
+  }
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Custom cursor pointer styles */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+a, button, [role="button"] {
+  @apply cursor-pointer;
+}
+
+/* 3D hover animation for cards */
+.card-3d-effect {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  backface-visibility: hidden;
+}
+
+.card-3d-effect:hover {
+  transform: translateY(-10px) rotateX(4deg) rotateY(4deg) scale(1.02);
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.1),
+    0 5px 15px rgba(0, 0, 0, 0.07),
+    0 1px 5px rgba(239, 68, 68, 0.1);
+}
+
+.dark .card-3d-effect:hover {
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.3),
+    0 1px 5px rgba(239, 68, 68, 0.2);
+}
+
+/* Inner elements 3D effect */
+.card-3d-effect img, 
+.card-3d-effect h3,
+.card-3d-effect p {
+  transform: translateZ(20px);
+}
+
+/* Button hover effects */
+.btn-hover-effect {
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-hover-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.btn-hover-effect:hover::before {
+  left: 100%;
+}
+
+/* Gradient backgrounds */
+.gradient-bg-1 {
+  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+}
+
+.gradient-bg-2 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.dark .gradient-bg-1 {
+  background: linear-gradient(135deg, #7f0027 0%, #8b0000 100%);
+}
+
+.dark .gradient-bg-2 {
+  background: linear-gradient(135deg, #2a3365 0%, #461d69 100%);
+}
+
+/* Comment styles enhancement */
+.comment-card {
+  border-radius: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.comment-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+}
+
+.dark .comment-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.comment-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #ff416c, #ff4b2b);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.comment-card:hover::before {
+  opacity: 1;
+}
+
+/* Add these CSS variables to your index.css file */
+
+@layer base {
+  :root {
+    /* Existing variables */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    
+    /* ... keep all your other existing variables ... */
+    
+    /* New pattern variables */
+    --pattern-dot: 240 3.7% 15.9%;
+    --pattern-beam: 217.2 91.2% 59.8%;
+    --grid-line: 240 3.7% 15.9%;
+    
+    /* Set default radius */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Existing dark mode variables */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    /* ... keep all your other existing dark mode variables ... */
+    
+    /* New pattern variables for dark mode */
+    --pattern-dot: 0 0% 63.9%;
+    --pattern-beam: 217.2 91.2% 59.8%;
+    --grid-line: 0 0% 20%;
+  }
+}
+
+/* Optional helper classes for patterns */
+.bg-dots {
+  background-image: radial-gradient(circle, hsl(var(--pattern-dot)) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 0%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 0%, transparent 100%);
+}
+
+.bg-grid {
+  background-image: linear-gradient(to right, hsl(var(--grid-line)/0.1) 1px, transparent 1px), 
+                     linear-gradient(to bottom, hsl(var(--grid-line)/0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
