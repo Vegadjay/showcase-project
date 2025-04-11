@@ -73,7 +73,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://linkedin.com/vegadjay" className="text-gray-400 hover:text-blue-400 transition flex items-center">
+                <a href="https://www.linkedin.com/in/vegadjay/" className="text-gray-400 hover:text-blue-400 transition flex items-center">
                   <Linkedin className="mr-2 h-4 w-4" /> linkedin.com/vegadjay
                 </a>
               </li>
@@ -101,7 +101,7 @@ const Footer = () => {
             <a href="https://x.com/JAY_VEGAD_" className="text-gray-400 hover:text-white transition">
               <Twitter className="h-5 w-5" />
             </a>
-            <a href="https://linkedin.com/vegadjay" className="text-gray-400 hover:text-white transition">
+            <a href="https://www.linkedin.com/in/vegadjay/" className="text-gray-400 hover:text-white transition">
               <Linkedin className="h-5 w-5" />
             </a>
             <a href="mailto:contact@devshowcase.com" className="text-gray-400 hover:text-white transition">
