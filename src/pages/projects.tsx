@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
@@ -57,7 +56,7 @@ const Projects = () => {
       animate="animate"
       exit="exit"
       variants={pageVariants}
-      className="min-h-screen" // Added to ensure full height
+      className="min-h-screen bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%221%22%20cy%3D%221%22%20r%3D%221%22%20fill%3D%22%23f1f1f1%22%20fill-opacity%3D%220.8%22%20%2F%3E%3C%2Fsvg%3E')] dark:bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%221%22%20cy%3D%221%22%20r%3D%221%22%20fill%3D%22%23333%22%20fill-opacity%3D%220.6%22%20%2F%3E%3C%2Fsvg%3E')]"
     >
       {/* Hero Section with reduced padding */}
       <section className="py-8">
@@ -95,7 +94,7 @@ const Projects = () => {
       {/* Call to Action with reduced padding */}
       <section className="py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between bg-white dark:bg-black p-6 rounded-xl shadow-md">
+          <div className="flex flex-col md:flex-row items-center justify-between bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
             <div className="md:w-2/3 mb-4 md:mb-0">
               <h2 className="text-2xl font-bold bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent mb-2">
                 Have a project to showcase?

@@ -160,7 +160,7 @@ const FeaturedCarousel = ({ projects, onProjectClick }: FeaturedCarouselProps) =
 
   return (
     <motion.section 
-      className="py-12 sm:py-16 relative overflow-hidden"
+      className="relative overflow-hidden"
       ref={carouselRef}
     >
       <div className="absolute inset-0 bg-dot-pattern bg-dot-md opacity-10 dark:opacity-5"></div>

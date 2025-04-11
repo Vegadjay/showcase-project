@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Heart, Link } from "lucide-react";
 import { isProjectLiked, toggleProjectLike } from "@/lib/localStorage";
+import { ArrowRight } from "lucide-react";
 
 type Project = {
   map(arg0: (project: any) => import("react/jsx-runtime").JSX.Element): React.ReactNode;
@@ -48,7 +49,7 @@ export function ThreeDProjectCard({ project, onClick }: { project: Project; onCl
     <CardContainer 
       className="inter-var w-full cursor-pointer"
     >
-      <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-red-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[300px] md:w-[380px] h-auto rounded-xl p-4 border transition-all duration-300 hover:shadow-xl">
+      <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-4xl dark:hover:shadow-red-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[300px] md:w-[380px] h-auto rounded-xl p-4 border transition-all duration-300 hover:shadow-xl">
         <div className="absolute top-3 right-3 z-10">
           <CardItem
             translateZ="80"
@@ -122,20 +123,10 @@ export function ThreeDProjectCard({ project, onClick }: { project: Project; onCl
             translateZ={20}
             as="button"
             onClick={handleProjectOpen}
-            className="px-3 py-1.5 rounded-lg text-xs font-normal dark:text-white hover:underline"
+            className="w-full py-3 px-6 text-lg font-medium rounded-lg bg-red-600 text-white hover:bg-red-700 transform hover:scale-[1.02] transition-all duration-200 shadow-lg hover:shadow-red-500/25 flex items-center justify-center gap-2"
           >
-            View Details →
-          </CardItem>
-          <CardItem
-            translateZ={20}
-            as="button"
-            onClick={(e: { stopPropagation: () => void; }) => {
-              e.stopPropagation();
-              console.log('Project saved:', project.id);
-            }}
-            className="px-3 py-1.5 rounded-lg bg-red-500 hover:bg-red-600 text-white text-xs font-medium"
-          >
-            Save
+            View Details
+            <ArrowRight className="w-5 h-5" />
           </CardItem>
         </div>
       </CardBody>

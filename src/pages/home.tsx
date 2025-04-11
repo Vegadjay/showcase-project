@@ -22,6 +22,7 @@ const Home = () => {
       animate="animate"
       exit="exit"
       variants={pageVariants}
+      className="bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%221%22%20cy%3D%221%22%20r%3D%221%22%20fill%3D%22%23f1f1f1%22%20fill-opacity%3D%220.8%22%20%2F%3E%3C%2Fsvg%3E')] dark:bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%221%22%20cy%3D%221%22%20r%3D%221%22%20fill%3D%22%23333%22%20fill-opacity%3D%220.6%22%20%2F%3E%3C%2Fsvg%3E')]"
     >
       <Hero />
       <FeaturedCarousel 
@@ -39,14 +40,14 @@ const Home = () => {
       
       {/* View All Projects Button */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-  <motion.button 
-    className="px-8 py-3 border-2 border-red-500 bg-transparent text-red-500 dark:border-red-400 dark:text-red-400 rounded-lg font-bold relative group transition duration-300"
-    onClick={() => setLocation("/projects")}
-  >
-    <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-red-500 to-red-700 h-full w-full -z-10 group-hover:bottom-0 group-hover:right-0 transition-all duration-300 rounded-lg" />
-    <span className="relative group-hover:text-white transition-colors duration-300">View All Projects</span>
-  </motion.button>
-</div>
+        <motion.button 
+          className="px-8 py-3 border-2 border-red-500 bg-transparent text-red-500 dark:border-red-400 dark:text-red-400 rounded-lg font-bold relative group transition duration-300"
+          onClick={() => setLocation("/projects")}
+        >
+          <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-red-500 to-red-700 h-full w-full -z-10 group-hover:bottom-0 group-hover:right-0 transition-all duration-300 rounded-lg" />
+          <span className="relative group-hover:text-white transition-colors duration-300">View All Projects</span>
+        </motion.button>
+      </div>
       
       {/* Animated CTA section */}
       <section className="py-16 relative">
